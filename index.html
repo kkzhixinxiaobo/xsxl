@@ -126,94 +126,95 @@
             background: #fef3e8;
         }
 
-        /* 左右两栏布局 */
+        /* 首页左右布局 */
         .home-layout {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 32px;
-            align-items: start;
+            display: flex;
+            gap: 48px;
+            align-items: stretch;
         }
 
         .left-section {
-            display: flex;
-            flex-direction: column;
+            flex: 2;
+        }
+
+        .right-section {
+            flex: 1;
+            min-width: 280px;
         }
 
         .section-title {
-            margin-bottom: 24px;
+            margin-bottom: 28px;
         }
         .section-title h2 {
-            font-size: 22px;
-            font-weight: 600;
+            font-size: 28px;
+            font-weight: 700;
             color: #1e2f3d;
         }
         .section-title p {
-            font-size: 14px;
+            font-size: 15px;
             color: #6c7f8f;
-            margin-top: 6px;
+            margin-top: 8px;
         }
 
         .cards-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
 
         .card {
             background: white;
-            border-radius: 20px;
-            padding: 24px 20px;
-            text-align: center;
+            border-radius: 28px;
+            padding: 32px 28px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
             border: 1px solid #eef2f6;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
+            align-items: center;
+            gap: 24px;
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.1);
+            transform: translateX(6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
             border-color: #f39c12;
+            background: #fef9f0;
         }
 
         .card-emoji {
-            font-size: 44px;
-            margin-bottom: 14px;
+            font-size: 64px;
+        }
+
+        .card-content {
+            flex: 1;
         }
 
         .card-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 8px;
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 10px;
             color: #1e2f3d;
         }
 
         .card-desc {
-            font-size: 12px;
+            font-size: 14px;
             color: #8a9aa8;
-            line-height: 1.4;
+            line-height: 1.5;
         }
 
-        .right-section {
-            display: flex;
-            flex-direction: column;
-        }
-
+        /* 统计卡片 */
         .stats-card {
             background: white;
             border-radius: 24px;
             padding: 24px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
             border: 1px solid #eef2f6;
             height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
         }
-
         .stats-header {
             display: flex;
             align-items: center;
@@ -222,17 +223,14 @@
             padding-bottom: 12px;
             border-bottom: 2px solid #f0f2f6;
         }
-
         .stats-header span {
             font-size: 28px;
         }
-
         .stats-header h4 {
             font-size: 18px;
             font-weight: 600;
             color: #1e2f3d;
         }
-
         .stat-item-row {
             display: flex;
             justify-content: space-between;
@@ -240,16 +238,14 @@
             padding: 12px 0;
             border-bottom: 1px solid #f0f2f6;
         }
-
         .stat-label {
             font-size: 15px;
             font-weight: 500;
             color: #2c3e4e;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
-
         .stat-number {
             font-size: 22px;
             font-weight: 700;
@@ -260,97 +256,41 @@
             min-width: 80px;
             text-align: center;
         }
-
-        .stat-unit {
-            font-size: 13px;
-            font-weight: normal;
-            color: #8a9aa8;
-            margin-left: 4px;
-        }
-
         .total-row {
             border-top: 2px solid #e2e8f0;
             margin-top: 8px;
             padding-top: 16px;
         }
-
         .total-row .stat-number {
             background: #e67e22;
             color: white;
         }
 
-        /* 模态框 */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
+        /* 导航标签 */
+        .nav-tabs {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
+            gap: 16px;
+            margin-bottom: 28px;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 12px;
         }
-        .modal-content {
-            background: white;
-            border-radius: 32px;
-            padding: 32px;
-            width: 420px;
-            max-width: 90%;
-            box-shadow: 0 20px 35px rgba(0,0,0,0.2);
-        }
-        .modal-content h3 {
-            margin-bottom: 20px;
-            color: #1e2f3d;
-        }
-        .modal-content input {
-            width: 100%;
-            padding: 12px 16px;
-            margin: 8px 0;
-            border: 1px solid #e2e8f0;
-            border-radius: 40px;
-            font-size: 14px;
-        }
-        .modal-buttons {
-            display: flex;
-            justify-content: flex-end;
-            gap: 12px;
-            margin-top: 20px;
-        }
-        .modal-btn {
-            padding: 8px 20px;
-            border-radius: 40px;
+        .nav-tab {
+            font-size: 18px;
+            font-weight: 600;
+            background: none;
             border: none;
             cursor: pointer;
-            font-weight: 500;
+            color: #8a9aa8;
+            padding: 8px 0;
+            transition: all 0.2s;
         }
-        .modal-btn.confirm {
-            background: #e67e22;
-            color: white;
-        }
-        .modal-btn.cancel {
-            background: #f1f3f7;
-            color: #5a6e7c;
-        }
-        .switch-auth {
-            text-align: center;
-            margin-top: 16px;
-            font-size: 13px;
-            color: #7f8c8d;
-        }
-        .switch-auth span {
+        .nav-tab.active {
             color: #e67e22;
-            cursor: pointer;
-            font-weight: 500;
-        }
-        .error-msg {
-            color: #e74c3c;
-            font-size: 12px;
-            margin-top: 5px;
+            border-bottom: 3px solid #e67e22;
+            margin-bottom: -13px;
         }
 
-        /* 学段选择页 */
+        /* 议题选择页 */
         .back-bar {
             display: flex;
             align-items: center;
@@ -381,56 +321,162 @@
             color: #1e2f3d;
         }
 
-        .grade-grid {
-            display: flex;
-            gap: 30px;
-            justify-content: center;
-            flex-wrap: wrap;
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 24px;
             margin-top: 20px;
         }
-        .grade-card {
+        .topic-card {
             background: white;
-            border-radius: 28px;
-            width: 320px;
-            overflow: hidden;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border-radius: 20px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef2f6;
+        }
+        .topic-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.1);
+            border-color: #f39c12;
+            background: #fef9f0;
+        }
+        .topic-header {
             display: flex;
-            flex-direction: column;
-            transition: transform 0.2s;
-        }
-        .grade-card:hover {
-            transform: translateY(-4px);
-        }
-        .grade-header {
-            padding: 24px 20px;
-            text-align: center;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
             border-bottom: 1px solid #f0f2f6;
         }
-        .grade-emoji { font-size: 48px; margin-bottom: 12px; }
-        .grade-title { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
-        .grade-desc { font-size: 12px; color: #7f8c8d; }
-        .grade-card.primary .grade-header { background: #fef9f0; }
-        .grade-card.primary .grade-title { color: #e67e22; }
-        .grade-card.junior .grade-header { background: #f0f9f4; }
-        .grade-card.junior .grade-title { color: #27ae60; }
-        .grade-card.senior .grade-header { background: #fef0f0; }
-        .grade-card.senior .grade-title { color: #e74c3c; }
-        .cases-list {
-            max-height: 320px;
-            overflow-y: auto;
-            padding: 12px;
+        .topic-emoji {
+            font-size: 32px;
         }
-        .cases-list::-webkit-scrollbar { width: 4px; }
+        .topic-info h4 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e2f3d;
+        }
+        .hot-cases {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .hot-case-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px dashed #f0f2f6;
+            cursor: pointer;
+        }
+        .hot-case-item:hover {
+            background: #fef9f0;
+            margin: 0 -8px;
+            padding: 8px 8px;
+            border-radius: 12px;
+        }
+        .hot-case-name {
+            font-size: 13px;
+            color: #2c3e4e;
+        }
+        .hot-case-count {
+            font-size: 11px;
+            background: #f0f2f5;
+            padding: 2px 8px;
+            border-radius: 20px;
+            color: #e67e22;
+        }
+        .view-all {
+            margin-top: 12px;
+            text-align: center;
+            font-size: 12px;
+            color: #e67e22;
+        }
+
+        /* 案例库网格 */
+        .cases-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .case-gallery-item {
+            background: white;
+            border-radius: 18px;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #eef2f6;
+        }
+        .case-gallery-item:hover {
+            transform: translateY(-3px);
+            border-color: #f39c12;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            background: #fef9f0;
+        }
+        .case-gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .case-gallery-grade {
+            font-size: 12px;
+            background: #f0f2f5;
+            padding: 2px 10px;
+            border-radius: 20px;
+            color: #5a6e7c;
+        }
+        .case-gallery-topic {
+            font-size: 12px;
+            color: #e67e22;
+        }
+        .case-gallery-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e2f3d;
+            margin-bottom: 8px;
+        }
+        .case-gallery-difficulty {
+            font-size: 11px;
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
+        .case-gallery-difficulty.easy { background: #e8f5e9; color: #27ae60; }
+        .case-gallery-difficulty.medium { background: #fff3e0; color: #f39c12; }
+        .case-gallery-difficulty.hard { background: #ffebee; color: #e74c3c; }
+
+        /* 案例列表页（全部案例） */
+        .cases-container {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef2f6;
+        }
+        .cases-list {
+            max-height: 500px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .cases-list::-webkit-scrollbar { width: 6px; }
         .cases-list::-webkit-scrollbar-track { background: #f1f1f1; border-radius: 4px; }
         .cases-list::-webkit-scrollbar-thumb { background: #c1c1c1; border-radius: 4px; }
         .case-item {
-            padding: 12px 16px;
-            margin-bottom: 8px;
             background: #f8fafc;
-            border-radius: 20px;
+            border-radius: 14px;
+            padding: 14px 18px;
             cursor: pointer;
-            border: 1px solid #eef2f6;
             transition: all 0.2s;
+            border: 1px solid #eef2f6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .case-item:hover {
             background: #fef9f0;
@@ -438,15 +484,25 @@
             transform: translateX(4px);
         }
         .case-name {
-            font-weight: 600;
+            font-weight: 500;
             font-size: 14px;
             color: #1e2f3d;
         }
+        .case-difficulty {
+            font-size: 11px;
+            background: #f0f2f5;
+            padding: 3px 10px;
+            border-radius: 20px;
+            color: #5a6e7c;
+        }
+        .case-difficulty.easy { background: #e8f5e9; color: #27ae60; }
+        .case-difficulty.medium { background: #fff3e0; color: #f39c12; }
+        .case-difficulty.hard { background: #ffebee; color: #e74c3c; }
 
         /* 训练主界面 */
         .training-container {
             background: white;
-            border-radius: 32px;
+            border-radius: 28px;
             box-shadow: 0 20px 35px -10px rgba(0,0,0,0.1);
             overflow: hidden;
             display: flex;
@@ -462,8 +518,8 @@
             gap: 8px;
         }
         .tab {
-            padding: 16px 28px;
-            font-size: 15px;
+            padding: 14px 24px;
+            font-size: 14px;
             font-weight: 600;
             background: transparent;
             border: none;
@@ -471,9 +527,8 @@
             color: #6c7f8f;
             transition: all 0.2s;
             border-radius: 40px 40px 0 0;
-            position: relative;
         }
-        .tab.active { color: #e67e22; background: white; }
+        .tab.active { color: #e67e22; background: white; position: relative; }
         .tab.active::after {
             content: '';
             position: absolute;
@@ -487,33 +542,32 @@
         .chat-area {
             flex: 1;
             overflow-y: auto;
-            padding: 24px 28px;
+            padding: 20px 24px;
             background: #ffffff;
             display: flex;
             flex-direction: column;
-            gap: 18px;
+            gap: 16px;
         }
         .message { display: flex; flex-direction: column; max-width: 75%; }
         .message.user { align-self: flex-end; }
         .message.ai { align-self: flex-start; }
         .bubble {
-            padding: 12px 18px;
-            border-radius: 24px;
-            font-size: 15px;
+            padding: 10px 16px;
+            border-radius: 20px;
+            font-size: 14px;
             line-height: 1.45;
-            word-break: break-word;
         }
-        .user .bubble { background: #e67e22; color: white; border-bottom-right-radius: 6px; }
-        .ai .bubble { background: #f1f3f7; color: #2c3e4e; border-bottom-left-radius: 6px; }
-        .role-tag { font-size: 11px; margin-bottom: 5px; color: #8a9aa8; padding-left: 8px; }
-        .input-area { padding: 16px 28px; border-top: 1px solid #edf2f7; background: white; }
+        .user .bubble { background: #e67e22; color: white; border-bottom-right-radius: 4px; }
+        .ai .bubble { background: #f1f3f7; color: #2c3e4e; border-bottom-left-radius: 4px; }
+        .role-tag { font-size: 10px; margin-bottom: 4px; color: #8a9aa8; padding-left: 8px; }
+        .input-area { padding: 14px 24px; border-top: 1px solid #edf2f7; background: white; }
         .input-wrapper { display: flex; gap: 12px; align-items: flex-end; }
         .input-wrapper textarea {
             flex: 1;
             border: 1px solid #e2e8f0;
             border-radius: 40px;
-            padding: 12px 20px;
-            font-size: 15px;
+            padding: 10px 18px;
+            font-size: 14px;
             resize: none;
             font-family: inherit;
             outline: none;
@@ -522,18 +576,18 @@
         .send-btn {
             background: #e67e22;
             border: none;
-            width: 48px;
-            height: 48px;
+            width: 44px;
+            height: 44px;
             border-radius: 40px;
             color: white;
-            font-size: 20px;
+            font-size: 18px;
             cursor: pointer;
         }
         .send-btn:hover { background: #d35400; }
         .action-bar {
             display: flex;
-            gap: 16px;
-            padding: 12px 28px 20px;
+            gap: 12px;
+            padding: 10px 24px 16px;
             background: #fefefe;
             border-top: 1px solid #f0f2f6;
             flex-wrap: wrap;
@@ -541,9 +595,9 @@
         .action-btn {
             background: #f8f9fc;
             border: 1px solid #e2e8f0;
-            padding: 8px 20px;
+            padding: 6px 16px;
             border-radius: 40px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 500;
             cursor: pointer;
             color: #2c3e4e;
@@ -553,59 +607,64 @@
         .tips-panel {
             background: #fffaf0;
             border-left: 4px solid #f39c12;
-            padding: 12px 20px;
-            margin: 0 28px 12px;
-            border-radius: 20px;
-            font-size: 13px;
+            padding: 10px 18px;
+            margin: 0 24px 12px;
+            border-radius: 16px;
+            font-size: 12px;
             color: #7a5a2a;
             display: none;
         }
         .tips-panel.show { display: block; }
         .report-container {
             background: white;
-            border-radius: 32px;
-            padding: 32px;
+            border-radius: 28px;
+            padding: 28px;
             box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
         }
         .score-grid {
             display: flex;
-            gap: 24px;
-            margin: 30px 0;
+            gap: 20px;
+            margin: 25px 0;
             flex-wrap: wrap;
         }
         .score-card {
             flex: 1;
             background: #f8fafc;
-            border-radius: 28px;
-            padding: 24px;
+            border-radius: 24px;
+            padding: 20px;
             text-align: center;
         }
         .score-level {
-            font-size: 48px;
+            font-size: 42px;
             font-weight: 800;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .score-level.low { color: #27ae60; }
         .score-level.medium { color: #f39c12; }
         .score-level.high { color: #e67e22; }
-        .export-buttons { display: flex; gap: 16px; justify-content: center; margin-top: 32px; }
+        .export-buttons { display: flex; gap: 16px; justify-content: center; margin-top: 28px; }
         .hidden { display: none; }
 
         @media (max-width: 1000px) {
-            .home-layout { grid-template-columns: 1fr; gap: 24px; }
-            .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .home-layout { flex-direction: column; }
+            .card { padding: 24px 20px; }
+            .card-emoji { font-size: 48px; }
+            .card-title { font-size: 22px; }
+            .right-section { width: 100%; }
             .app { padding: 20px; }
         }
         @media (max-width: 700px) {
-            .app { padding: 16px; }
-            .cards-grid { grid-template-columns: 1fr; }
-            .tab { padding: 12px 18px; font-size: 14px; }
+            .cards-grid { gap: 16px; }
+            .card { flex-direction: column; text-align: center; gap: 12px; }
+            .topics-grid { grid-template-columns: 1fr; }
+            .cases-gallery { grid-template-columns: 1fr; }
+            .tab { padding: 10px 16px; font-size: 12px; }
         }
     </style>
 </head>
 <body>
 <div class="app" id="app">
-    <!-- 首页视图 -->
+    <!-- 首页视图：左右布局 -->
     <div id="homeView">
         <div class="header">
             <div class="logo-area">
@@ -618,33 +677,33 @@
         <div class="home-layout">
             <div class="left-section">
                 <div class="section-title">
-                    <h2>选择训练议题</h2>
-                    <p>聚焦中小学心理辅导四大核心场景，逐级进阶训练</p>
+                    <h2>选择学段</h2>
+                    <p>根据不同学段学生的心理发展特点，进行针对性训练</p>
                 </div>
-                <div class="cards-grid" id="topicCards">
-                    <div class="card" data-topic="亲子">
-                        <div class="card-emoji">👨‍👩‍👧</div>
-                        <div class="card-title">亲子</div>
-                        <div class="card-desc">家庭冲突 · 代际理解 · 情感表达</div>
-                    </div>
-                    <div class="card" data-topic="学业">
+                <div class="cards-grid">
+                    <div class="card" data-grade="小学">
                         <div class="card-emoji">📚</div>
-                        <div class="card-title">学业</div>
-                        <div class="card-desc">考试焦虑 · 厌学情绪 · 升学压力</div>
+                        <div class="card-content">
+                            <div class="card-title">小学</div>
+                            <div class="card-desc">自我认识 · 情绪管理 · 同伴交往<br>学习习惯 · 青春期启蒙</div>
+                        </div>
                     </div>
-                    <div class="card" data-topic="人际">
-                        <div class="card-emoji">👥</div>
-                        <div class="card-title">人际</div>
-                        <div class="card-desc">同伴交往 · 师生关系 · 异性相处</div>
+                    <div class="card" data-grade="初中">
+                        <div class="card-emoji">🌱</div>
+                        <div class="card-content">
+                            <div class="card-title">初中</div>
+                            <div class="card-desc">青春期心理与情感 · 情绪波动与冲动控制<br>人际关系 · 自我意识 · 学习动机</div>
+                        </div>
                     </div>
-                    <div class="card" data-topic="自我">
-                        <div class="card-emoji">💭</div>
-                        <div class="card-title">自我</div>
-                        <div class="card-desc">情绪识别 · 自我认知 · 成长困惑</div>
+                    <div class="card" data-grade="高中">
+                        <div class="card-emoji">⚡</div>
+                        <div class="card-content">
+                            <div class="card-title">高中</div>
+                            <div class="card-desc">学习适应性问题 · 青春期性心理问题<br>人际关系问题 · 情绪调控问题</div>
+                        </div>
                     </div>
                 </div>
             </div>
-
             <div class="right-section">
                 <div class="stats-card">
                     <div class="stats-header">
@@ -652,20 +711,16 @@
                         <h4>我的训练统计</h4>
                     </div>
                     <div class="stat-item-row">
-                        <div class="stat-label"><span>👨‍👩‍👧</span> 亲子</div>
-                        <div class="stat-number"><span id="countTopic1">0</span><span class="stat-unit">次</span></div>
+                        <div class="stat-label"><span>📚</span> 小学</div>
+                        <div class="stat-number"><span id="countPrimary">0</span><span class="stat-unit">次</span></div>
                     </div>
                     <div class="stat-item-row">
-                        <div class="stat-label"><span>📚</span> 学业</div>
-                        <div class="stat-number"><span id="countTopic2">0</span><span class="stat-unit">次</span></div>
+                        <div class="stat-label"><span>🌱</span> 初中</div>
+                        <div class="stat-number"><span id="countJunior">0</span><span class="stat-unit">次</span></div>
                     </div>
                     <div class="stat-item-row">
-                        <div class="stat-label"><span>👥</span> 人际</div>
-                        <div class="stat-number"><span id="countTopic3">0</span><span class="stat-unit">次</span></div>
-                    </div>
-                    <div class="stat-item-row">
-                        <div class="stat-label"><span>💭</span> 自我</div>
-                        <div class="stat-number"><span id="countTopic4">0</span><span class="stat-unit">次</span></div>
+                        <div class="stat-label"><span>⚡</span> 高中</div>
+                        <div class="stat-number"><span id="countSenior">0</span><span class="stat-unit">次</span></div>
                     </div>
                     <div class="stat-item-row total-row">
                         <div class="stat-label"><span>🏆</span> 总训练次数</div>
@@ -676,20 +731,29 @@
         </div>
     </div>
 
-    <!-- 学段选择页 -->
-    <div id="gradeView" class="hidden">
+    <!-- 议题选择页（带热门案例） -->
+    <div id="topicView" class="hidden">
         <div class="back-bar">
-            <button class="back-btn" id="backHomeFromGradeBtn">← 返回首页</button>
-            <div class="current-topic" id="gradeTopicTitle">亲子</div>
+            <button class="back-btn" id="backHomeFromTopicBtn">← 返回首页</button>
+            <div class="current-topic" id="topicGradeTitle">小学</div>
         </div>
-        <div class="grade-grid" id="gradeGrid"></div>
+        <div class="topics-grid" id="topicsGrid"></div>
+    </div>
+
+    <!-- 案例库页面（全部案例独立界面） -->
+    <div id="libraryView" class="hidden">
+        <div class="back-bar">
+            <button class="back-btn" id="backHomeFromLibraryBtn">← 返回首页</button>
+            <div class="current-topic">📚 全部案例</div>
+        </div>
+        <div class="cases-gallery" id="casesGallery"></div>
     </div>
 
     <!-- 训练主界面 -->
     <div id="trainingView" class="hidden">
         <div class="back-bar">
-            <button class="back-btn" id="backToGradeBtn">← 返回学段选择</button>
-            <div class="current-topic" id="trainingHeaderInfo">亲子 · 小学 · 案例名称</div>
+            <button class="back-btn" id="backToPrevBtn">← 返回</button>
+            <div class="current-topic" id="trainingHeaderInfo">小学 · 自我认识 · 案例名称</div>
         </div>
         <div class="training-container">
             <div class="tabs">
@@ -721,13 +785,13 @@
         </div>
         <div class="report-container" id="reportContainer">
             <h2>📊 训练反馈报告</h2>
-            <p style="color:#5a6e7c" id="reportCaseInfo">亲子 · 小学 · 案例名称</p>
+            <p style="color:#5a6e7c" id="reportCaseInfo">小学 · 自我认识 · 案例名称</p>
             <div class="score-grid">
                 <div class="score-card"><div class="score-level" id="studentLevel">--</div><div>🧑‍🎓 学生对话</div></div>
                 <div class="score-card"><div class="score-level" id="parentLevel">--</div><div>👩‍👧 家长沟通</div></div>
                 <div class="score-card"><div class="score-level" id="teacherLevel">--</div><div>👨‍🏫 班主任协作</div></div>
             </div>
-            <div style="background:#f9f5ef; border-radius: 24px; padding: 20px; margin: 20px 0;">
+            <div style="background:#f9f5ef; border-radius: 20px; padding: 18px; margin: 18px 0;">
                 <h4>📝 详细分析与改进建议</h4>
                 <div id="adviceContent"></div>
             </div>
@@ -740,181 +804,217 @@
 </div>
 
 <script>
-    // 案例数据库
-    const casesDB = {
-        "亲子": { 
-            "小学": [{ name: "爸妈总是吵架，我很害怕", difficulty: "easy" }, { name: "妈妈总拿我和别人比", difficulty: "medium" }, { name: "爸爸打了我，我不敢回家", difficulty: "hard" }, { name: "父母离异，我跟奶奶住", difficulty: "medium" }], 
-            "初中": [{ name: "他们根本不理解我", difficulty: "easy" }, { name: "妈妈偷看我的日记", difficulty: "medium" }, { name: "父母要离婚，我该怎么办", difficulty: "medium" }, { name: "我爸说考不上高中就别回来了", difficulty: "hard" }], 
-            "高中": [{ name: "父母只关心成绩", difficulty: "easy" }, { name: "我想选文科，爸妈非要我学理", difficulty: "medium" }, { name: "我抑郁了，但爸妈不信", difficulty: "hard" }] 
+    // 完整案例数据
+    const allCasesData = {
+        "小学": {
+            topics: ["自我认识", "情绪管理", "同伴交往", "学习习惯", "青春期启蒙"],
+            cases: {
+                "自我认识": [{ name: "我不喜欢我自己", difficulty: "easy" }, { name: "我觉得自己什么都做不好", difficulty: "medium" }, { name: "我不知道自己有什么优点", difficulty: "easy" }, { name: "我总觉得自己不如别人", difficulty: "medium" }],
+                "情绪管理": [{ name: "我控制不住发脾气", difficulty: "easy" }, { name: "我总是很伤心", difficulty: "medium" }, { name: "我一生气就想摔东西", difficulty: "hard" }, { name: "我害怕表达情绪", difficulty: "easy" }],
+                "同伴交往": [{ name: "同学都不跟我玩", difficulty: "easy" }, { name: "我被班上的小团体排挤", difficulty: "medium" }, { name: "我的好朋友突然不理我了", difficulty: "medium" }, { name: "我不知道怎么交朋友", difficulty: "easy" }],
+                "学习习惯": [{ name: "作业总是拖到很晚", difficulty: "easy" }, { name: "上课总是走神", difficulty: "medium" }, { name: "我不想上学", difficulty: "hard" }, { name: "我害怕考试", difficulty: "easy" }],
+                "青春期启蒙": [{ name: "身体的变化让我害怕", difficulty: "easy" }, { name: "我喜欢上了班里的同学", difficulty: "medium" }, { name: "我对性感到困惑", difficulty: "hard" }]
+            }
         },
-        "学业": { 
-            "小学": [{ name: "考试前睡不着觉", difficulty: "easy" }, { name: "作业太多做不完", difficulty: "easy" }, { name: "我害怕上学", difficulty: "hard" }], 
-            "初中": [{ name: "成绩下滑，我很焦虑", difficulty: "easy" }, { name: "怎么学都学不好", difficulty: "medium" }, { name: "我不想上学了", difficulty: "hard" }], 
-            "高中": [{ name: "高考压力太大", difficulty: "medium" }, { name: "我考不上好大学就完了", difficulty: "hard" }, { name: "我失眠很久了", difficulty: "hard" }] 
+        "初中": {
+            topics: ["青春期心理与情感", "情绪波动与冲动控制", "人际关系", "自我意识", "学习动机"],
+            cases: {
+                "青春期心理与情感": [{ name: "我好像喜欢上了一个人", difficulty: "easy" }, { name: "暗恋让我很痛苦", difficulty: "medium" }, { name: "我失恋了，很难受", difficulty: "hard" }],
+                "情绪波动与冲动控制": [{ name: "我经常emo", difficulty: "easy" }, { name: "我生气时会摔东西", difficulty: "medium" }, { name: "我用美工刀划自己", difficulty: "hard" }, { name: "我控制不住自己的脾气", difficulty: "medium" }],
+                "人际关系": [{ name: "好朋友突然不理我了", difficulty: "easy" }, { name: "我不知道怎么和异性相处", difficulty: "medium" }, { name: "他们在网上发帖骂我", difficulty: "hard" }, { name: "我被孤立了", difficulty: "medium" }],
+                "自我意识": [{ name: "我觉得自己很普通", difficulty: "easy" }, { name: "我总觉得自己不够好", difficulty: "medium" }, { name: "我不知道我是谁", difficulty: "hard" }],
+                "学习动机": [{ name: "我不想学习", difficulty: "easy" }, { name: "怎么学都学不好", difficulty: "medium" }, { name: "我不想上学了", difficulty: "hard" }]
+            }
         },
-        "人际": { 
-            "小学": [{ name: "同学都不跟我玩", difficulty: "easy" }, { name: "我被班上的小团体排挤", difficulty: "medium" }, { name: "老师总是批评我", difficulty: "medium" }], 
-            "初中": [{ name: "好朋友突然不理我了", difficulty: "easy" }, { name: "我不知道怎么和异性相处", difficulty: "medium" }, { name: "他们在网上发帖骂我", difficulty: "hard" }], 
-            "高中": [{ name: "我觉得自己格格不入", difficulty: "easy" }, { name: "我喜欢上了同班的同学", difficulty: "medium" }, { name: "我被室友孤立了", difficulty: "hard" }] 
-        },
-        "自我": { 
-            "小学": [{ name: "我控制不住发脾气", difficulty: "easy" }, { name: "我总是很伤心", difficulty: "medium" }], 
-            "初中": [{ name: "我经常emo", difficulty: "easy" }, { name: "我生气时会摔东西", difficulty: "medium" }, { name: "我用美工刀划自己", difficulty: "hard" }], 
-            "高中": [{ name: "我焦虑得喘不过气", difficulty: "medium" }, { name: "我觉得活着没意思", difficulty: "hard" }] 
+        "高中": {
+            topics: ["学习适应性问题", "青春期性心理问题", "人际关系问题", "情绪调控问题"],
+            cases: {
+                "学习适应性问题": [{ name: "高考压力太大", difficulty: "medium" }, { name: "我考不上好大学就完了", difficulty: "hard" }, { name: "我失眠很久了", difficulty: "hard" }, { name: "我注意力不集中", difficulty: "easy" }],
+                "青春期性心理问题": [{ name: "我对性感到好奇又害怕", difficulty: "easy" }, { name: "我有自慰行为很自责", difficulty: "medium" }, { name: "我怀孕了，怎么办", difficulty: "hard" }],
+                "人际关系问题": [{ name: "我觉得自己格格不入", difficulty: "easy" }, { name: "我被室友孤立了", difficulty: "hard" }, { name: "老师好像针对我", difficulty: "medium" }],
+                "情绪调控问题": [{ name: "我焦虑得喘不过气", difficulty: "medium" }, { name: "我觉得活着没意思", difficulty: "hard" }, { name: "我控制不住想哭", difficulty: "easy" }]
+            }
         }
     };
 
-    // 学段描述映射（与议题对应）
-    const gradeDescMap = {
-        "亲子": {
-            "小学": "6-12岁 · 亲子沟通 · 家庭关系基础",
-            "初中": "12-15岁 · 亲子沟通 · 青春期冲突化解",
-            "高中": "15-18岁 · 亲子沟通 · 未来规划与情感支持"
-        },
-        "学业": {
-            "小学": "6-12岁 · 学业适应 · 学习习惯养成",
-            "初中": "12-15岁 · 学业压力 · 升学焦虑疏导",
-            "高中": "15-18岁 · 学业压力 · 高考心理调适"
-        },
-        "人际": {
-            "小学": "6-12岁 · 人际交往 · 同伴关系建立",
-            "初中": "12-15岁 · 人际交往 · 异性相处与友谊",
-            "高中": "15-18岁 · 人际交往 · 社交与归属感"
-        },
-        "自我": {
-            "小学": "6-12岁 · 自我认知 · 情绪识别与管理",
-            "初中": "12-15岁 · 自我认知 · 青春期的自我探索",
-            "高中": "15-18岁 · 自我认知 · 自我认同与成长"
-        }
-    };
+    // 练习次数存储
+    let practiceCounts = JSON.parse(localStorage.getItem('xinyu_case_counts')) || {};
+
+    function incrementCaseCount(grade, topic, caseName) {
+        const key = `${grade}|${topic}|${caseName}`;
+        practiceCounts[key] = (practiceCounts[key] || 0) + 1;
+        localStorage.setItem('xinyu_case_counts', JSON.stringify(practiceCounts));
+    }
+
+    function getTop3Cases(grade, topic) {
+        const cases = allCasesData[grade]?.cases[topic] || [];
+        const withCounts = cases.map(c => ({
+            ...c,
+            count: practiceCounts[`${grade}|${topic}|${c.name}`] || 0
+        }));
+        return [...withCounts].sort((a, b) => b.count - a.count).slice(0, 3);
+    }
 
     let currentUser = null;
-    let currentTopic = '亲子', currentGrade = '小学', currentCase = null;
-    let currentRole = 'student', currentMessages = [], isImmersive = false;
+    let currentGrade = "小学", currentTopic = "自我认识", currentCase = null;
+    let currentRole = "student", currentMessages = [], isImmersive = false;
     let studentMessageCount = 0, parentMessageCount = 0, teacherMessageCount = 0;
+    let previousView = "home";
 
     const STORAGE_KEY = 'xinyu_users';
-    const STATS_KEY = 'xinyu_training_counts';
-    
+    const STATS_KEY = 'xinyu_training_counts_v2';
+
     function loadUsers() { const u = localStorage.getItem(STORAGE_KEY); return u ? JSON.parse(u) : {}; }
     function saveUsers(u) { localStorage.setItem(STORAGE_KEY, JSON.stringify(u)); }
-    
-    function loadTrainingCounts() {
-        const defaults = { "亲子": 0, "学业": 0, "人际": 0, "自我": 0, total: 0 };
-        const stored = localStorage.getItem(STATS_KEY);
-        return stored ? JSON.parse(stored) : defaults;
-    }
-    
-    function saveTrainingCounts(counts) {
-        localStorage.setItem(STATS_KEY, JSON.stringify(counts));
-    }
-    
+    function loadTrainingCounts() { const stored = localStorage.getItem(STATS_KEY); return stored ? JSON.parse(stored) : { "小学": 0, "初中": 0, "高中": 0, total: 0 }; }
+    function saveTrainingCounts(counts) { localStorage.setItem(STATS_KEY, JSON.stringify(counts)); }
     function updateTrainingCountsDisplay() {
         const counts = loadTrainingCounts();
-        document.getElementById('countTopic1').innerText = counts["亲子"] || 0;
-        document.getElementById('countTopic2').innerText = counts["学业"] || 0;
-        document.getElementById('countTopic3').innerText = counts["人际"] || 0;
-        document.getElementById('countTopic4').innerText = counts["自我"] || 0;
+        document.getElementById('countPrimary').innerText = counts["小学"] || 0;
+        document.getElementById('countJunior').innerText = counts["初中"] || 0;
+        document.getElementById('countSenior').innerText = counts["高中"] || 0;
         document.getElementById('totalPracticeCount').innerText = counts.total || 0;
     }
-    
-    function incrementTrainingCount(topic) {
+    function incrementTrainingCount(grade) {
         const counts = loadTrainingCounts();
-        counts[topic] = (counts[topic] || 0) + 1;
+        counts[grade] = (counts[grade] || 0) + 1;
         counts.total = (counts.total || 0) + 1;
         saveTrainingCounts(counts);
         updateTrainingCountsDisplay();
     }
 
     function updateAuthUI() {
-        const authArea = document.getElementById('authArea');
-        if (currentUser) {
-            authArea.innerHTML = `<div class="user-info"><div class="user-avatar">${currentUser.name[0]}</div><span class="user-name">${currentUser.name}</span><span style="font-size:12px;color:#8a9aa8;">${currentUser.school}</span><button class="logout-btn" id="logoutBtn">退出</button></div>`;
-            document.getElementById('logoutBtn')?.addEventListener('click', () => { currentUser = null; updateAuthUI(); alert('已退出登录'); location.reload(); });
+        const a = document.getElementById('authArea');
+        if(currentUser){
+            a.innerHTML=`<div class="user-info"><div class="user-avatar">${currentUser.name[0]}</div><span class="user-name">${currentUser.name}</span><button class="logout-btn" id="logoutBtn">退出</button></div>`;
+            document.getElementById('logoutBtn')?.addEventListener('click',()=>{currentUser=null;updateAuthUI();alert('已退出');location.reload();});
         } else {
-            authArea.innerHTML = `<button class="auth-btn" id="loginBtn">登录</button><button class="auth-btn primary" id="registerBtn">注册</button>`;
-            document.getElementById('loginBtn')?.addEventListener('click', () => showAuthModal('login'));
-            document.getElementById('registerBtn')?.addEventListener('click', () => showAuthModal('register'));
+            a.innerHTML=`<button class="auth-btn" id="loginBtn">登录</button><button class="auth-btn primary" id="registerBtn">注册</button>`;
+            document.getElementById('loginBtn')?.addEventListener('click',()=>{currentUser={name:"测试用户",school:"师范院校"};updateAuthUI();alert('登录成功');});
+            document.getElementById('registerBtn')?.addEventListener('click',()=>{currentUser={name:"新用户",school:"师范院校"};updateAuthUI();alert('注册成功');});
         }
     }
 
-    function showAuthModal(type) {
-        const modalDiv = document.createElement('div'); modalDiv.className = 'modal';
-        if (type === 'register') {
-            modalDiv.innerHTML = `<div class="modal-content"><h3>📝 注册新师心练账号</h3><input type="text" id="regSchool" placeholder="学校名称"><input type="text" id="regStudentId" placeholder="学号"><input type="text" id="regName" placeholder="姓名"><input type="password" id="regPassword" placeholder="密码"><div id="regError" class="error-msg"></div><div class="modal-buttons"><button class="modal-btn cancel" id="closeModalBtn">取消</button><button class="modal-btn confirm" id="confirmRegBtn">注册</button></div><div class="switch-auth">已有账号？ <span id="switchToLogin">去登录</span></div></div>`;
-        } else {
-            modalDiv.innerHTML = `<div class="modal-content"><h3>🔐 登录新师心练</h3><input type="text" id="loginStudentId" placeholder="学号"><input type="password" id="loginPassword" placeholder="密码"><div id="loginError" class="error-msg"></div><div class="modal-buttons"><button class="modal-btn cancel" id="closeModalBtn">取消</button><button class="modal-btn confirm" id="confirmLoginBtn">登录</button></div><div class="switch-auth">没有账号？ <span id="switchToReg">立即注册</span></div></div>`;
+    // 渲染案例库（全部案例）
+    function renderCasesGallery() {
+        const container = document.getElementById('casesGallery');
+        let allCases = [];
+        for (const grade in allCasesData) {
+            for (const topic in allCasesData[grade].cases) {
+                for (const c of allCasesData[grade].cases[topic]) {
+                    allCases.push({ grade, topic, name: c.name, difficulty: c.difficulty });
+                }
+            }
         }
-        document.body.appendChild(modalDiv);
-        const closeModal = () => modalDiv.remove();
-        if (type === 'register') {
-            document.getElementById('closeModalBtn').onclick = closeModal;
-            document.getElementById('confirmRegBtn').onclick = () => {
-                const school = document.getElementById('regSchool').value.trim(), studentId = document.getElementById('regStudentId').value.trim(), name = document.getElementById('regName').value.trim(), password = document.getElementById('regPassword').value.trim();
-                if (!school || !studentId || !name || !password) { document.getElementById('regError').innerText = '请填写所有字段'; return; }
-                const users = loadUsers();
-                if (users[studentId]) { document.getElementById('regError').innerText = '该学号已被注册'; return; }
-                users[studentId] = { school, studentId, name, password };
-                saveUsers(users);
-                alert(`注册成功！请登录，${name}`); closeModal(); showAuthModal('login');
-            };
-            document.getElementById('switchToLogin').onclick = () => { closeModal(); showAuthModal('login'); };
-        } else {
-            document.getElementById('closeModalBtn').onclick = closeModal;
-            document.getElementById('confirmLoginBtn').onclick = () => {
-                const studentId = document.getElementById('loginStudentId').value.trim(), password = document.getElementById('loginPassword').value.trim();
-                const users = loadUsers(), user = users[studentId];
-                if (!user || user.password !== password) { document.getElementById('loginError').innerText = '学号或密码错误'; return; }
-                currentUser = { school: user.school, studentId: user.studentId, name: user.name };
-                updateAuthUI(); closeModal(); alert(`欢迎回来，${user.name}`);
-            };
-            document.getElementById('switchToReg').onclick = () => { closeModal(); showAuthModal('register'); };
-        }
-    }
-
-    function renderGradeView() {
-        const container = document.getElementById('gradeGrid');
-        const grades = ['小学', '初中', '高中'];
-        const gradeColors = { '小学': 'primary', '初中': 'junior', '高中': 'senior' };
-        const gradeEmojis = { '小学': '📚', '初中': '🌱', '高中': '⚡' };
-        
-        container.innerHTML = grades.map(grade => {
-            const cases = casesDB[currentTopic]?.[grade] || [];
-            const descText = gradeDescMap[currentTopic]?.[grade] || `${grade} · ${currentTopic}议题训练`;
-            return `<div class="grade-card ${gradeColors[grade]}">
-                        <div class="grade-header">
-                            <div class="grade-emoji">${gradeEmojis[grade]}</div>
-                            <div class="grade-title">${grade}</div>
-                            <div class="grade-desc">${descText}</div>
-                        </div>
-                        <div class="cases-list">
-                            ${cases.map(c => `<div class="case-item" data-grade="${grade}" data-case-name="${c.name}" data-difficulty="${c.difficulty}"><div class="case-name">${c.name}</div></div>`).join('')}
-                            ${cases.length === 0 ? '<div style="padding:20px;text-align:center;color:#aaa;">暂无案例</div>' : ''}
-                        </div>
-                    </div>`;
-        }).join('');
-        
-        document.querySelectorAll('.case-item').forEach(el => {
+        container.innerHTML = allCases.map(c => `
+            <div class="case-gallery-item" data-grade="${c.grade}" data-topic="${c.topic}" data-name="${c.name}" data-difficulty="${c.difficulty}">
+                <div class="case-gallery-header">
+                    <span class="case-gallery-grade">${c.grade}</span>
+                    <span class="case-gallery-topic">${c.topic}</span>
+                </div>
+                <div class="case-gallery-name">${c.name}</div>
+                <div><span class="case-gallery-difficulty ${c.difficulty}">${c.difficulty === 'easy' ? '简单' : c.difficulty === 'medium' ? '中等' : '困难'}</span></div>
+            </div>
+        `).join('');
+        document.querySelectorAll('.case-gallery-item').forEach(el => {
             el.addEventListener('click', () => {
                 currentGrade = el.getAttribute('data-grade');
-                const caseName = el.getAttribute('data-case-name');
+                currentTopic = el.getAttribute('data-topic');
+                const caseName = el.getAttribute('data-name');
                 const difficulty = el.getAttribute('data-difficulty');
-                currentCase = { name: caseName, difficulty: difficulty, grade: currentGrade };
-                document.getElementById('trainingHeaderInfo').innerText = `${currentTopic} · ${currentGrade} · ${caseName}`;
-                currentMessages = []; studentMessageCount = parentMessageCount = teacherMessageCount = 0; currentRole = 'student';
-                setActiveTab('student');
-                document.getElementById('trainingView').classList.remove('hidden');
-                document.getElementById('gradeView').classList.add('hidden');
+                currentCase = { name: caseName, difficulty: difficulty };
+                startTraining(caseName, difficulty);
             });
         });
     }
 
+    function renderTopics() {
+        const container = document.getElementById('topicsGrid');
+        const topics = allCasesData[currentGrade].topics;
+        container.innerHTML = topics.map(topic => {
+            const top3 = getTop3Cases(currentGrade, topic);
+            return `
+                <div class="topic-card" data-topic="${topic}">
+                    <div class="topic-header">
+                        <div class="topic-emoji">📌</div>
+                        <div class="topic-info"><h4>${topic}</h4></div>
+                    </div>
+                    <div class="hot-cases">
+                        ${top3.map(c => `
+                            <div class="hot-case-item" data-case-name="${c.name}" data-difficulty="${c.difficulty}">
+                                <span class="hot-case-name">${c.name}</span>
+                                <span class="hot-case-count">🔥 ${c.count}次</span>
+                            </div>
+                        `).join('')}
+                        ${top3.length === 0 ? '<div style="padding: 12px; text-align: center; color: #aaa; font-size: 12px;">暂无练习记录</div>' : ''}
+                    </div>
+                    <div class="view-all">查看全部案例 →</div>
+                </div>
+            `;
+        }).join('');
+
+        document.querySelectorAll('.topic-card').forEach(card => {
+            const topic = card.getAttribute('data-topic');
+            const viewAllDiv = card.querySelector('.view-all');
+            viewAllDiv.addEventListener('click', (e) => {
+                e.stopPropagation();
+                currentTopic = topic;
+                renderAllCasesForTopic();
+                document.getElementById('topicView').classList.add('hidden');
+                document.getElementById('casesView').classList.remove('hidden');
+                previousView = "topic";
+            });
+            card.querySelectorAll('.hot-case-item').forEach(item => {
+                item.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    currentTopic = topic;
+                    const caseName = item.getAttribute('data-case-name');
+                    const difficulty = item.getAttribute('data-difficulty');
+                    currentCase = { name: caseName, difficulty: difficulty };
+                    startTraining(caseName, difficulty);
+                });
+            });
+        });
+    }
+
+    function renderAllCasesForTopic() {
+        const container = document.getElementById('casesList');
+        const cases = allCasesData[currentGrade].cases[currentTopic] || [];
+        document.getElementById('casesGradeTopic').innerText = `${currentGrade} · ${currentTopic}`;
+        container.innerHTML = cases.map(c => `
+            <div class="case-item" data-case-name="${c.name}" data-difficulty="${c.difficulty}">
+                <span class="case-name">${c.name}</span>
+                <span class="case-difficulty ${c.difficulty}">${c.difficulty === 'easy' ? '简单' : c.difficulty === 'medium' ? '中等' : '困难'}</span>
+            </div>
+        `).join('');
+        document.querySelectorAll('.case-item').forEach(el => {
+            el.addEventListener('click', () => {
+                const caseName = el.getAttribute('data-case-name');
+                const difficulty = el.getAttribute('data-difficulty');
+                currentCase = { name: caseName, difficulty: difficulty };
+                startTraining(caseName, difficulty);
+            });
+        });
+    }
+
+    function startTraining(caseName, difficulty) {
+        document.getElementById('trainingHeaderInfo').innerText = `${currentGrade} · ${currentTopic} · ${caseName}`;
+        currentMessages = []; studentMessageCount = parentMessageCount = teacherMessageCount = 0; currentRole = 'student';
+        setActiveTab('student');
+        document.getElementById('trainingView').classList.remove('hidden');
+        if (!document.getElementById('casesView').classList.contains('hidden')) {
+            document.getElementById('casesView').classList.add('hidden');
+        }
+        if (!document.getElementById('topicView').classList.contains('hidden')) {
+            document.getElementById('topicView').classList.add('hidden');
+        }
+        if (!document.getElementById('libraryView').classList.contains('hidden')) {
+            document.getElementById('libraryView').classList.add('hidden');
+        }
+    }
+
     function getAIReply(role, userMsg, difficulty) {
-        const replies = { 
-            student: ['我有时候真的不知道怎么和爸妈说…', '老师，你觉得我该怎么办？', '其实我只是想被理解。'], 
-            parent: ['老师，我也很焦虑，我该怎么办？', '我承认我脾气急，但也是为他好。'], 
-            teacher: ['我会在课堂上多关注他。', '感谢反馈，我们一起制定计划。'] 
-        };
+        const replies = { student: ['我有时候真的不知道怎么和爸妈说…', '老师，你觉得我该怎么办？', '其实我只是想被理解。'], parent: ['老师，我也很焦虑，我该怎么办？', '我承认我脾气急，但也是为他好。'], teacher: ['我会在课堂上多关注他。', '感谢反馈，我们一起制定计划。'] };
         let list = replies[role] || ['我明白了。'];
         if (userMsg.includes('谢谢')) return '不客气，我们一起帮助孩子成长。';
         if (difficulty === 'hard' && role === 'student') return '老师，我真的好累…感觉没人懂我。';
@@ -954,14 +1054,7 @@
         setTimeout(() => { addMessage('ai', getAIReply(currentRole, text, currentCase?.difficulty || 'easy')); }, 400);
     }
     
-    function showTip(content) { 
-        const panel = document.getElementById('tipPanel'); 
-        if(panel){ 
-            panel.classList.add('show'); 
-            panel.innerHTML = `💡 ${content}`; 
-            setTimeout(() => panel.classList.remove('show'), 4000); 
-        } 
-    }
+    function showTip(content) { const panel = document.getElementById('tipPanel'); if(panel){ panel.classList.add('show'); panel.innerHTML = `💡 ${content}`; setTimeout(() => panel.classList.remove('show'), 4000); } }
     
     function setActiveTab(role) {
         currentRole = role;
@@ -982,13 +1075,12 @@
         const studentRes = getScoreLevel(studentMessageCount, currentCase?.difficulty || 'easy');
         const parentRes = getScoreLevel(parentMessageCount, currentCase?.difficulty || 'easy');
         const teacherRes = getScoreLevel(teacherMessageCount, currentCase?.difficulty || 'easy');
-        
-        incrementTrainingCount(currentTopic);
-        
+        incrementTrainingCount(currentGrade);
+        incrementCaseCount(currentGrade, currentTopic, currentCase.name);
         document.getElementById('studentLevel').innerHTML = `<span class="score-level ${studentRes.level === '高' ? 'high' : (studentRes.level === '中' ? 'medium' : 'low')}">${studentRes.level}</span>`;
         document.getElementById('parentLevel').innerHTML = `<span class="score-level ${parentRes.level === '高' ? 'high' : (parentRes.level === '中' ? 'medium' : 'low')}">${parentRes.level}</span>`;
         document.getElementById('teacherLevel').innerHTML = `<span class="score-level ${teacherRes.level === '高' ? 'high' : (teacherRes.level === '中' ? 'medium' : 'low')}">${teacherRes.level}</span>`;
-        document.getElementById('reportCaseInfo').innerText = `${currentTopic} · ${currentGrade} · ${currentCase?.name || '案例'}`;
+        document.getElementById('reportCaseInfo').innerText = `${currentGrade} · ${currentTopic} · ${currentCase?.name || '案例'}`;
         document.getElementById('adviceContent').innerHTML = `<div><strong>📊 分项评价</strong><br/>🧑‍🎓 学生对话：${studentRes.level}级 · ${studentRes.text}<br/><br/>👩‍👧 家长沟通：${parentRes.level}级 · ${parentRes.text}<br/><br/>👨‍🏫 班主任协作：${teacherRes.level}级 · ${teacherRes.text}<br/><br/><strong>💡 综合建议</strong><br/>建议加强${studentRes.level === '低' ? '学生对话' : (parentRes.level === '低' ? '家长沟通' : '班主任协作')}方面的练习，多使用开放式提问和共情语句。<br/><br/><strong>📈 训练统计</strong><br/>学生对话:${studentMessageCount}次 | 家长:${parentMessageCount}次 | 班主任:${teacherMessageCount}次</div>`;
         document.getElementById('trainingView').classList.add('hidden');
         document.getElementById('reportView').classList.remove('hidden');
@@ -997,20 +1089,76 @@
     function init() {
         updateAuthUI();
         updateTrainingCountsDisplay();
-        document.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => { if (!currentUser) { alert('请先登录后开始训练'); return; } currentTopic = c.getAttribute('data-topic'); document.getElementById('gradeTopicTitle').innerText = currentTopic; renderGradeView(); document.getElementById('homeView').classList.add('hidden'); document.getElementById('gradeView').classList.remove('hidden'); }));
-        document.getElementById('backHomeFromGradeBtn')?.addEventListener('click', () => { document.getElementById('gradeView').classList.add('hidden'); document.getElementById('homeView').classList.remove('hidden'); });
-        document.getElementById('backToGradeBtn')?.addEventListener('click', () => { document.getElementById('trainingView').classList.add('hidden'); document.getElementById('gradeView').classList.remove('hidden'); renderGradeView(); });
-        document.getElementById('reportBackBtn')?.addEventListener('click', () => { document.getElementById('reportView').classList.add('hidden'); document.getElementById('trainingView').classList.remove('hidden'); });
-        document.getElementById('sendMsgBtn')?.addEventListener('click', sendMessage);
-        document.getElementById('messageInput')?.addEventListener('keypress', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } });
-        document.getElementById('restartBtn')?.addEventListener('click', () => { currentMessages = []; studentMessageCount = parentMessageCount = teacherMessageCount = 0; renderMessages(); showTip('会话已重置'); });
-        document.getElementById('endConsultBtn')?.addEventListener('click', endConsultation);
-        document.getElementById('immersiveBtn')?.addEventListener('click', () => { isImmersive = !isImmersive; document.body.style.background = isImmersive ? '#1a1e2a' : ''; document.getElementById('immersiveBtn').innerText = isImmersive ? '🌞 退出沉浸' : '🌙 沉浸模式'; });
-        document.getElementById('showTipBtn')?.addEventListener('click', () => showTip('试着复述学生情绪，例如“听起来你感到很委屈”'));
-        document.querySelectorAll('.tab')?.forEach(t => t.addEventListener('click', () => setActiveTab(t.getAttribute('data-role'))));
-        document.getElementById('exportPdfBtn')?.addEventListener('click', () => html2pdf().set({ margin: 0.5, filename: `新师心练报告.pdf` }).from(document.getElementById('reportContainer')).save());
-        document.getElementById('exportTranscriptBtn')?.addEventListener('click', () => alert('逐字稿导出功能开发中'));
+        
+        // 首页学段卡片点击
+        document.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => { 
+            if (!currentUser) { alert('请先登录后开始训练'); return; } 
+            currentGrade = c.getAttribute('data-grade'); 
+            document.getElementById('topicGradeTitle').innerText = currentGrade; 
+            renderTopics(); 
+            document.getElementById('homeView').classList.add('hidden'); 
+            document.getElementById('topicView').classList.remove('hidden'); 
+            previousView = "home";
+        }));
+        
+        // 案例库入口（在首页添加案例库入口按钮）
+        const headerRight = document.querySelector('.auth-area');
+        const libraryBtn = document.createElement('button');
+        libraryBtn.className = 'auth-btn';
+        libraryBtn.innerHTML = '📚 案例库';
+        libraryBtn.style.marginRight = '8px';
+        libraryBtn.addEventListener('click', () => {
+            if (!currentUser) { alert('请先登录'); return; }
+            renderCasesGallery();
+            document.getElementById('homeView').classList.add('hidden');
+            document.getElementById('libraryView').classList.remove('hidden');
+        });
+        headerRight.insertBefore(libraryBtn, headerRight.firstChild);
+        
+        document.getElementById('backHomeFromTopicBtn').addEventListener('click', () => { document.getElementById('topicView').classList.add('hidden'); document.getElementById('homeView').classList.remove('hidden'); });
+        document.getElementById('backHomeFromLibraryBtn').addEventListener('click', () => { document.getElementById('libraryView').classList.add('hidden'); document.getElementById('homeView').classList.remove('hidden'); });
+        document.getElementById('backToPrevBtn').addEventListener('click', () => {
+            document.getElementById('trainingView').classList.add('hidden');
+            if (previousView === "topic") {
+                document.getElementById('topicView').classList.remove('hidden');
+            } else if (previousView === "library") {
+                document.getElementById('libraryView').classList.remove('hidden');
+            } else {
+                document.getElementById('homeView').classList.remove('hidden');
+            }
+        });
+        document.getElementById('reportBackBtn').addEventListener('click', () => { document.getElementById('reportView').classList.add('hidden'); document.getElementById('trainingView').classList.remove('hidden'); });
+        document.getElementById('sendMsgBtn').addEventListener('click', sendMessage);
+        document.getElementById('messageInput').addEventListener('keypress', (e) => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); } });
+        document.getElementById('restartBtn').addEventListener('click', () => { currentMessages = []; studentMessageCount = parentMessageCount = teacherMessageCount = 0; renderMessages(); showTip('会话已重置'); });
+        document.getElementById('endConsultBtn').addEventListener('click', endConsultation);
+        document.getElementById('immersiveBtn').addEventListener('click', () => { isImmersive = !isImmersive; document.body.style.background = isImmersive ? '#1a1e2a' : ''; document.getElementById('immersiveBtn').innerText = isImmersive ? '🌞 退出沉浸' : '🌙 沉浸模式'; });
+        document.getElementById('showTipBtn').addEventListener('click', () => showTip('试着复述学生情绪，例如“听起来你感到很委屈”'));
+        document.querySelectorAll('.tab').forEach(t => t.addEventListener('click', () => setActiveTab(t.getAttribute('data-role'))));
+        document.getElementById('exportPdfBtn').addEventListener('click', () => html2pdf().set({ margin: 0.5, filename: `新师心练报告.pdf` }).from(document.getElementById('reportContainer')).save());
+        document.getElementById('exportTranscriptBtn').addEventListener('click', () => alert('逐字稿导出功能开发中'));
         setActiveTab('student');
+        
+        // 案例列表页容器（用于议题内全部案例）
+        const casesViewDiv = document.createElement('div');
+        casesViewDiv.id = 'casesView';
+        casesViewDiv.className = 'hidden';
+        casesViewDiv.innerHTML = `
+            <div class="back-bar">
+                <button class="back-btn" id="backToTopicBtn">← 返回议题</button>
+                <div class="current-topic" id="casesGradeTopic">小学 · 自我认识</div>
+            </div>
+            <div class="cases-container">
+                <div class="cases-list" id="casesList"></div>
+            </div>
+        `;
+        document.getElementById('app').appendChild(casesViewDiv);
+        
+        document.getElementById('backToTopicBtn')?.addEventListener('click', () => {
+            document.getElementById('casesView').classList.add('hidden');
+            document.getElementById('topicView').classList.remove('hidden');
+            renderTopics();
+        });
     }
     init();
 </script>
