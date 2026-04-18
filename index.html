@@ -126,7 +126,7 @@
             background: #fef3e8;
         }
 
-        /* 左右两栏布局 - 使用网格实现等高 */
+        /* 左右两栏布局 */
         .home-layout {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -134,7 +134,6 @@
             align-items: start;
         }
 
-        /* 左侧：议题卡片区域 */
         .left-section {
             display: flex;
             flex-direction: column;
@@ -198,7 +197,6 @@
             line-height: 1.4;
         }
 
-        /* 右侧：统计卡片 - 使用相同高度 */
         .right-section {
             display: flex;
             flex-direction: column;
@@ -618,37 +616,35 @@
         </div>
 
         <div class="home-layout">
-            <!-- 左侧：议题卡片区域 -->
             <div class="left-section">
                 <div class="section-title">
                     <h2>选择训练议题</h2>
                     <p>聚焦中小学心理辅导四大核心场景，逐级进阶训练</p>
                 </div>
                 <div class="cards-grid" id="topicCards">
-                    <div class="card" data-topic="亲子沟通">
+                    <div class="card" data-topic="亲子">
                         <div class="card-emoji">👨‍👩‍👧</div>
-                        <div class="card-title">亲子沟通</div>
+                        <div class="card-title">亲子</div>
                         <div class="card-desc">家庭冲突 · 代际理解 · 情感表达</div>
                     </div>
-                    <div class="card" data-topic="人际关系">
-                        <div class="card-emoji">👥</div>
-                        <div class="card-title">人际关系</div>
-                        <div class="card-desc">同伴交往 · 师生关系 · 异性相处</div>
-                    </div>
-                    <div class="card" data-topic="学业压力">
+                    <div class="card" data-topic="学业">
                         <div class="card-emoji">📚</div>
-                        <div class="card-title">学业压力</div>
+                        <div class="card-title">学业</div>
                         <div class="card-desc">考试焦虑 · 厌学情绪 · 升学压力</div>
                     </div>
-                    <div class="card" data-topic="情绪管理">
+                    <div class="card" data-topic="人际">
+                        <div class="card-emoji">👥</div>
+                        <div class="card-title">人际</div>
+                        <div class="card-desc">同伴交往 · 师生关系 · 异性相处</div>
+                    </div>
+                    <div class="card" data-topic="自我">
                         <div class="card-emoji">💭</div>
-                        <div class="card-title">情绪管理</div>
-                        <div class="card-desc">情绪识别 · 调节方法 · 危机干预</div>
+                        <div class="card-title">自我</div>
+                        <div class="card-desc">情绪识别 · 自我认知 · 成长困惑</div>
                     </div>
                 </div>
             </div>
 
-            <!-- 右侧：统计卡片 -->
             <div class="right-section">
                 <div class="stats-card">
                     <div class="stats-header">
@@ -656,19 +652,19 @@
                         <h4>我的训练统计</h4>
                     </div>
                     <div class="stat-item-row">
-                        <div class="stat-label"><span>👨‍👩‍👧</span> 亲子沟通</div>
+                        <div class="stat-label"><span>👨‍👩‍👧</span> 亲子</div>
                         <div class="stat-number"><span id="countTopic1">0</span><span class="stat-unit">次</span></div>
                     </div>
                     <div class="stat-item-row">
-                        <div class="stat-label"><span>👥</span> 人际关系</div>
+                        <div class="stat-label"><span>📚</span> 学业</div>
                         <div class="stat-number"><span id="countTopic2">0</span><span class="stat-unit">次</span></div>
                     </div>
                     <div class="stat-item-row">
-                        <div class="stat-label"><span>📚</span> 学业压力</div>
+                        <div class="stat-label"><span>👥</span> 人际</div>
                         <div class="stat-number"><span id="countTopic3">0</span><span class="stat-unit">次</span></div>
                     </div>
                     <div class="stat-item-row">
-                        <div class="stat-label"><span>💭</span> 情绪管理</div>
+                        <div class="stat-label"><span>💭</span> 自我</div>
                         <div class="stat-number"><span id="countTopic4">0</span><span class="stat-unit">次</span></div>
                     </div>
                     <div class="stat-item-row total-row">
@@ -684,7 +680,7 @@
     <div id="gradeView" class="hidden">
         <div class="back-bar">
             <button class="back-btn" id="backHomeFromGradeBtn">← 返回首页</button>
-            <div class="current-topic" id="gradeTopicTitle">亲子沟通</div>
+            <div class="current-topic" id="gradeTopicTitle">亲子</div>
         </div>
         <div class="grade-grid" id="gradeGrid"></div>
     </div>
@@ -693,7 +689,7 @@
     <div id="trainingView" class="hidden">
         <div class="back-bar">
             <button class="back-btn" id="backToGradeBtn">← 返回学段选择</button>
-            <div class="current-topic" id="trainingHeaderInfo">亲子沟通 · 小学 · 案例名称</div>
+            <div class="current-topic" id="trainingHeaderInfo">亲子 · 小学 · 案例名称</div>
         </div>
         <div class="training-container">
             <div class="tabs">
@@ -725,7 +721,7 @@
         </div>
         <div class="report-container" id="reportContainer">
             <h2>📊 训练反馈报告</h2>
-            <p style="color:#5a6e7c" id="reportCaseInfo">亲子沟通 · 小学 · 案例名称</p>
+            <p style="color:#5a6e7c" id="reportCaseInfo">亲子 · 小学 · 案例名称</p>
             <div class="score-grid">
                 <div class="score-card"><div class="score-level" id="studentLevel">--</div><div>🧑‍🎓 学生对话</div></div>
                 <div class="score-card"><div class="score-level" id="parentLevel">--</div><div>👩‍👧 家长沟通</div></div>
@@ -746,14 +742,54 @@
 <script>
     // 案例数据库
     const casesDB = {
-        "亲子沟通": { "小学": [{ name: "爸妈总是吵架，我很害怕", difficulty: "easy" }, { name: "妈妈总拿我和别人比", difficulty: "medium" }, { name: "爸爸打了我，我不敢回家", difficulty: "hard" }, { name: "父母离异，我跟奶奶住", difficulty: "medium" }], "初中": [{ name: "他们根本不理解我", difficulty: "easy" }, { name: "妈妈偷看我的日记", difficulty: "medium" }, { name: "父母要离婚，我该怎么办", difficulty: "medium" }, { name: "我爸说考不上高中就别回来了", difficulty: "hard" }], "高中": [{ name: "父母只关心成绩", difficulty: "easy" }, { name: "我想选文科，爸妈非要我学理", difficulty: "medium" }, { name: "我抑郁了，但爸妈不信", difficulty: "hard" }] },
-        "人际关系": { "小学": [{ name: "同学都不跟我玩", difficulty: "easy" }, { name: "我被班上的小团体排挤", difficulty: "medium" }, { name: "老师总是批评我", difficulty: "medium" }], "初中": [{ name: "好朋友突然不理我了", difficulty: "easy" }, { name: "我不知道怎么和异性相处", difficulty: "medium" }, { name: "他们在网上发帖骂我", difficulty: "hard" }], "高中": [{ name: "我觉得自己格格不入", difficulty: "easy" }, { name: "我喜欢上了同班的同学", difficulty: "medium" }, { name: "我被室友孤立了", difficulty: "hard" }] },
-        "学业压力": { "小学": [{ name: "考试前睡不着觉", difficulty: "easy" }, { name: "作业太多做不完", difficulty: "easy" }, { name: "我害怕上学", difficulty: "hard" }], "初中": [{ name: "成绩下滑，我很焦虑", difficulty: "easy" }, { name: "怎么学都学不好", difficulty: "medium" }, { name: "我不想上学了", difficulty: "hard" }], "高中": [{ name: "高考压力太大", difficulty: "medium" }, { name: "我考不上好大学就完了", difficulty: "hard" }, { name: "我失眠很久了", difficulty: "hard" }] },
-        "情绪管理": { "小学": [{ name: "我控制不住发脾气", difficulty: "easy" }, { name: "我总是很伤心", difficulty: "medium" }], "初中": [{ name: "我经常emo", difficulty: "easy" }, { name: "我生气时会摔东西", difficulty: "medium" }, { name: "我用美工刀划自己", difficulty: "hard" }], "高中": [{ name: "我焦虑得喘不过气", difficulty: "medium" }, { name: "我觉得活着没意思", difficulty: "hard" }] }
+        "亲子": { 
+            "小学": [{ name: "爸妈总是吵架，我很害怕", difficulty: "easy" }, { name: "妈妈总拿我和别人比", difficulty: "medium" }, { name: "爸爸打了我，我不敢回家", difficulty: "hard" }, { name: "父母离异，我跟奶奶住", difficulty: "medium" }], 
+            "初中": [{ name: "他们根本不理解我", difficulty: "easy" }, { name: "妈妈偷看我的日记", difficulty: "medium" }, { name: "父母要离婚，我该怎么办", difficulty: "medium" }, { name: "我爸说考不上高中就别回来了", difficulty: "hard" }], 
+            "高中": [{ name: "父母只关心成绩", difficulty: "easy" }, { name: "我想选文科，爸妈非要我学理", difficulty: "medium" }, { name: "我抑郁了，但爸妈不信", difficulty: "hard" }] 
+        },
+        "学业": { 
+            "小学": [{ name: "考试前睡不着觉", difficulty: "easy" }, { name: "作业太多做不完", difficulty: "easy" }, { name: "我害怕上学", difficulty: "hard" }], 
+            "初中": [{ name: "成绩下滑，我很焦虑", difficulty: "easy" }, { name: "怎么学都学不好", difficulty: "medium" }, { name: "我不想上学了", difficulty: "hard" }], 
+            "高中": [{ name: "高考压力太大", difficulty: "medium" }, { name: "我考不上好大学就完了", difficulty: "hard" }, { name: "我失眠很久了", difficulty: "hard" }] 
+        },
+        "人际": { 
+            "小学": [{ name: "同学都不跟我玩", difficulty: "easy" }, { name: "我被班上的小团体排挤", difficulty: "medium" }, { name: "老师总是批评我", difficulty: "medium" }], 
+            "初中": [{ name: "好朋友突然不理我了", difficulty: "easy" }, { name: "我不知道怎么和异性相处", difficulty: "medium" }, { name: "他们在网上发帖骂我", difficulty: "hard" }], 
+            "高中": [{ name: "我觉得自己格格不入", difficulty: "easy" }, { name: "我喜欢上了同班的同学", difficulty: "medium" }, { name: "我被室友孤立了", difficulty: "hard" }] 
+        },
+        "自我": { 
+            "小学": [{ name: "我控制不住发脾气", difficulty: "easy" }, { name: "我总是很伤心", difficulty: "medium" }], 
+            "初中": [{ name: "我经常emo", difficulty: "easy" }, { name: "我生气时会摔东西", difficulty: "medium" }, { name: "我用美工刀划自己", difficulty: "hard" }], 
+            "高中": [{ name: "我焦虑得喘不过气", difficulty: "medium" }, { name: "我觉得活着没意思", difficulty: "hard" }] 
+        }
+    };
+
+    // 学段描述映射（与议题对应）
+    const gradeDescMap = {
+        "亲子": {
+            "小学": "6-12岁 · 亲子沟通 · 家庭关系基础",
+            "初中": "12-15岁 · 亲子沟通 · 青春期冲突化解",
+            "高中": "15-18岁 · 亲子沟通 · 未来规划与情感支持"
+        },
+        "学业": {
+            "小学": "6-12岁 · 学业适应 · 学习习惯养成",
+            "初中": "12-15岁 · 学业压力 · 升学焦虑疏导",
+            "高中": "15-18岁 · 学业压力 · 高考心理调适"
+        },
+        "人际": {
+            "小学": "6-12岁 · 人际交往 · 同伴关系建立",
+            "初中": "12-15岁 · 人际交往 · 异性相处与友谊",
+            "高中": "15-18岁 · 人际交往 · 社交与归属感"
+        },
+        "自我": {
+            "小学": "6-12岁 · 自我认知 · 情绪识别与管理",
+            "初中": "12-15岁 · 自我认知 · 青春期的自我探索",
+            "高中": "15-18岁 · 自我认知 · 自我认同与成长"
+        }
     };
 
     let currentUser = null;
-    let currentTopic = '亲子沟通', currentGrade = '小学', currentCase = null;
+    let currentTopic = '亲子', currentGrade = '小学', currentCase = null;
     let currentRole = 'student', currentMessages = [], isImmersive = false;
     let studentMessageCount = 0, parentMessageCount = 0, teacherMessageCount = 0;
 
@@ -764,7 +800,7 @@
     function saveUsers(u) { localStorage.setItem(STORAGE_KEY, JSON.stringify(u)); }
     
     function loadTrainingCounts() {
-        const defaults = { "亲子沟通": 0, "人际关系": 0, "学业压力": 0, "情绪管理": 0, total: 0 };
+        const defaults = { "亲子": 0, "学业": 0, "人际": 0, "自我": 0, total: 0 };
         const stored = localStorage.getItem(STATS_KEY);
         return stored ? JSON.parse(stored) : defaults;
     }
@@ -775,10 +811,10 @@
     
     function updateTrainingCountsDisplay() {
         const counts = loadTrainingCounts();
-        document.getElementById('countTopic1').innerText = counts["亲子沟通"] || 0;
-        document.getElementById('countTopic2').innerText = counts["人际关系"] || 0;
-        document.getElementById('countTopic3').innerText = counts["学业压力"] || 0;
-        document.getElementById('countTopic4').innerText = counts["情绪管理"] || 0;
+        document.getElementById('countTopic1').innerText = counts["亲子"] || 0;
+        document.getElementById('countTopic2').innerText = counts["学业"] || 0;
+        document.getElementById('countTopic3').innerText = counts["人际"] || 0;
+        document.getElementById('countTopic4').innerText = counts["自我"] || 0;
         document.getElementById('totalPracticeCount').innerText = counts.total || 0;
     }
     
@@ -839,11 +875,25 @@
     function renderGradeView() {
         const container = document.getElementById('gradeGrid');
         const grades = ['小学', '初中', '高中'];
-        const gradeConfig = { '小学': { emoji: '📚', color: 'primary', desc: '6-12岁 · 基础认知与情绪识别' }, '初中': { emoji: '🌱', color: 'junior', desc: '12-15岁 · 青春期叛逆与社交困惑' }, '高中': { emoji: '⚡', color: 'senior', desc: '15-18岁 · 升学压力与自我认同' } };
+        const gradeColors = { '小学': 'primary', '初中': 'junior', '高中': 'senior' };
+        const gradeEmojis = { '小学': '📚', '初中': '🌱', '高中': '⚡' };
+        
         container.innerHTML = grades.map(grade => {
             const cases = casesDB[currentTopic]?.[grade] || [];
-            return `<div class="grade-card ${gradeConfig[grade].color}"><div class="grade-header"><div class="grade-emoji">${gradeConfig[grade].emoji}</div><div class="grade-title">${grade}</div><div class="grade-desc">${gradeConfig[grade].desc}</div></div><div class="cases-list">${cases.map(c => `<div class="case-item" data-grade="${grade}" data-case-name="${c.name}" data-difficulty="${c.difficulty}"><div class="case-name">${c.name}</div></div>`).join('')}${cases.length===0?'<div style="padding:20px;text-align:center;color:#aaa;">暂无案例</div>':''}</div></div>`;
+            const descText = gradeDescMap[currentTopic]?.[grade] || `${grade} · ${currentTopic}议题训练`;
+            return `<div class="grade-card ${gradeColors[grade]}">
+                        <div class="grade-header">
+                            <div class="grade-emoji">${gradeEmojis[grade]}</div>
+                            <div class="grade-title">${grade}</div>
+                            <div class="grade-desc">${descText}</div>
+                        </div>
+                        <div class="cases-list">
+                            ${cases.map(c => `<div class="case-item" data-grade="${grade}" data-case-name="${c.name}" data-difficulty="${c.difficulty}"><div class="case-name">${c.name}</div></div>`).join('')}
+                            ${cases.length === 0 ? '<div style="padding:20px;text-align:center;color:#aaa;">暂无案例</div>' : ''}
+                        </div>
+                    </div>`;
         }).join('');
+        
         document.querySelectorAll('.case-item').forEach(el => {
             el.addEventListener('click', () => {
                 currentGrade = el.getAttribute('data-grade');
@@ -860,7 +910,11 @@
     }
 
     function getAIReply(role, userMsg, difficulty) {
-        const replies = { student: ['我有时候真的不知道怎么和爸妈说…', '老师，你觉得我该怎么办？', '其实我只是想被理解。'], parent: ['老师，我也很焦虑，我该怎么办？', '我承认我脾气急，但也是为他好。'], teacher: ['我会在课堂上多关注他。', '感谢反馈，我们一起制定计划。'] };
+        const replies = { 
+            student: ['我有时候真的不知道怎么和爸妈说…', '老师，你觉得我该怎么办？', '其实我只是想被理解。'], 
+            parent: ['老师，我也很焦虑，我该怎么办？', '我承认我脾气急，但也是为他好。'], 
+            teacher: ['我会在课堂上多关注他。', '感谢反馈，我们一起制定计划。'] 
+        };
         let list = replies[role] || ['我明白了。'];
         if (userMsg.includes('谢谢')) return '不客气，我们一起帮助孩子成长。';
         if (difficulty === 'hard' && role === 'student') return '老师，我真的好累…感觉没人懂我。';
