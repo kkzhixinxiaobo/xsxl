@@ -266,30 +266,6 @@
             color: white;
         }
 
-        /* 导航标签 */
-        .nav-tabs {
-            display: flex;
-            gap: 16px;
-            margin-bottom: 28px;
-            border-bottom: 1px solid #e2e8f0;
-            padding-bottom: 12px;
-        }
-        .nav-tab {
-            font-size: 18px;
-            font-weight: 600;
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: #8a9aa8;
-            padding: 8px 0;
-            transition: all 0.2s;
-        }
-        .nav-tab.active {
-            color: #e67e22;
-            border-bottom: 3px solid #e67e22;
-            margin-bottom: -13px;
-        }
-
         /* 议题选择页 */
         .back-bar {
             display: flex;
@@ -439,17 +415,8 @@
             color: #1e2f3d;
             margin-bottom: 8px;
         }
-        .case-gallery-difficulty {
-            font-size: 11px;
-            display: inline-block;
-            padding: 2px 10px;
-            border-radius: 20px;
-        }
-        .case-gallery-difficulty.easy { background: #e8f5e9; color: #27ae60; }
-        .case-gallery-difficulty.medium { background: #fff3e0; color: #f39c12; }
-        .case-gallery-difficulty.hard { background: #ffebee; color: #e74c3c; }
 
-        /* 案例列表页（全部案例） */
+        /* 案例列表页 */
         .cases-container {
             background: white;
             border-radius: 20px;
@@ -488,16 +455,6 @@
             font-size: 14px;
             color: #1e2f3d;
         }
-        .case-difficulty {
-            font-size: 11px;
-            background: #f0f2f5;
-            padding: 3px 10px;
-            border-radius: 20px;
-            color: #5a6e7c;
-        }
-        .case-difficulty.easy { background: #e8f5e9; color: #27ae60; }
-        .case-difficulty.medium { background: #fff3e0; color: #f39c12; }
-        .case-difficulty.hard { background: #ffebee; color: #e74c3c; }
 
         /* 训练主界面 */
         .training-container {
@@ -685,21 +642,21 @@
                         <div class="card-emoji">📚</div>
                         <div class="card-content">
                             <div class="card-title">小学</div>
-                            <div class="card-desc">自我认识 · 情绪管理 · 同伴交往<br>学习习惯 · 青春期启蒙</div>
+                            <div class="card-desc">自我认识 · 学会学习 · 人际交往 · 情绪调适<br>规则与适应 · 青春期启蒙 · 安全与自我保护</div>
                         </div>
                     </div>
                     <div class="card" data-grade="初中">
                         <div class="card-emoji">🌱</div>
                         <div class="card-content">
                             <div class="card-title">初中</div>
-                            <div class="card-desc">青春期心理与情感 · 情绪波动与冲动控制<br>人际关系 · 自我意识 · 学习动机</div>
+                            <div class="card-desc">自我认识 · 学会学习 · 人际交往 · 情绪调适<br>升学择业 · 挫折应对 · 青春期性健康</div>
                         </div>
                     </div>
                     <div class="card" data-grade="高中">
                         <div class="card-emoji">⚡</div>
                         <div class="card-content">
                             <div class="card-title">高中</div>
-                            <div class="card-desc">学习适应性问题 · 青春期性心理问题<br>人际关系问题 · 情绪调控问题</div>
+                            <div class="card-desc">自我意识 · 学会学习 · 人际交往 · 情绪调适<br>生涯规划 · 社会责任感 · 心理问题识别与求助</div>
                         </div>
                     </div>
                 </div>
@@ -804,35 +761,42 @@
 </div>
 
 <script>
-    // 完整案例数据
+    // 完整案例数据 - 按最新分类体系
     const allCasesData = {
         "小学": {
-            topics: ["自我认识", "情绪管理", "同伴交往", "学习习惯", "青春期启蒙"],
+            topics: ["自我认识", "学会学习", "人际交往", "情绪调适", "规则与适应", "青春期启蒙", "安全与自我保护"],
             cases: {
-                "自我认识": [{ name: "我不喜欢我自己", difficulty: "easy" }, { name: "我觉得自己什么都做不好", difficulty: "medium" }, { name: "我不知道自己有什么优点", difficulty: "easy" }, { name: "我总觉得自己不如别人", difficulty: "medium" }],
-                "情绪管理": [{ name: "我控制不住发脾气", difficulty: "easy" }, { name: "我总是很伤心", difficulty: "medium" }, { name: "我一生气就想摔东西", difficulty: "hard" }, { name: "我害怕表达情绪", difficulty: "easy" }],
-                "同伴交往": [{ name: "同学都不跟我玩", difficulty: "easy" }, { name: "我被班上的小团体排挤", difficulty: "medium" }, { name: "我的好朋友突然不理我了", difficulty: "medium" }, { name: "我不知道怎么交朋友", difficulty: "easy" }],
-                "学习习惯": [{ name: "作业总是拖到很晚", difficulty: "easy" }, { name: "上课总是走神", difficulty: "medium" }, { name: "我不想上学", difficulty: "hard" }, { name: "我害怕考试", difficulty: "easy" }],
-                "青春期启蒙": [{ name: "身体的变化让我害怕", difficulty: "easy" }, { name: "我喜欢上了班里的同学", difficulty: "medium" }, { name: "我对性感到困惑", difficulty: "hard" }]
+                "自我认识": [{ name: "我不喜欢我自己" }, { name: "我觉得自己什么都做不好" }, { name: "我不知道自己有什么优点" }, { name: "我总觉得自己不如别人" }],
+                "学会学习": [{ name: "作业总是拖到很晚" }, { name: "上课总是走神" }, { name: "我害怕考试" }, { name: "我不知道怎么预习和复习" }],
+                "人际交往": [{ name: "同学都不跟我玩" }, { name: "我被班上的小团体排挤" }, { name: "我的好朋友突然不理我了" }, { name: "我不知道怎么交朋友" }],
+                "情绪调适": [{ name: "我控制不住发脾气" }, { name: "我总是很伤心" }, { name: "我一生气就想摔东西" }, { name: "我害怕表达情绪" }],
+                "规则与适应": [{ name: "我不想上学" }, { name: "我不适应新班级" }, { name: "我总是违反纪律" }, { name: "我不知道怎么遵守规则" }],
+                "青春期启蒙": [{ name: "身体的变化让我害怕" }, { name: "我喜欢上了班里的同学" }, { name: "我对性感到困惑" }],
+                "安全与自我保护": [{ name: "有人让我摸他怎么办" }, { name: "陌生人给我看奇怪图片" }, { name: "我不敢告诉妈妈发生了什么" }]
             }
         },
         "初中": {
-            topics: ["青春期心理与情感", "情绪波动与冲动控制", "人际关系", "自我意识", "学习动机"],
+            topics: ["自我认识", "学会学习", "人际交往", "情绪调适", "升学择业", "挫折应对", "青春期性健康"],
             cases: {
-                "青春期心理与情感": [{ name: "我好像喜欢上了一个人", difficulty: "easy" }, { name: "暗恋让我很痛苦", difficulty: "medium" }, { name: "我失恋了，很难受", difficulty: "hard" }],
-                "情绪波动与冲动控制": [{ name: "我经常emo", difficulty: "easy" }, { name: "我生气时会摔东西", difficulty: "medium" }, { name: "我用美工刀划自己", difficulty: "hard" }, { name: "我控制不住自己的脾气", difficulty: "medium" }],
-                "人际关系": [{ name: "好朋友突然不理我了", difficulty: "easy" }, { name: "我不知道怎么和异性相处", difficulty: "medium" }, { name: "他们在网上发帖骂我", difficulty: "hard" }, { name: "我被孤立了", difficulty: "medium" }],
-                "自我意识": [{ name: "我觉得自己很普通", difficulty: "easy" }, { name: "我总觉得自己不够好", difficulty: "medium" }, { name: "我不知道我是谁", difficulty: "hard" }],
-                "学习动机": [{ name: "我不想学习", difficulty: "easy" }, { name: "怎么学都学不好", difficulty: "medium" }, { name: "我不想上学了", difficulty: "hard" }]
+                "自我认识": [{ name: "我觉得自己很普通" }, { name: "我总觉得自己不够好" }, { name: "我不知道我是谁" }, { name: "我对自己很失望" }],
+                "学会学习": [{ name: "我不想学习" }, { name: "怎么学都学不好" }, { name: "我不想上学了" }, { name: "我找不到学习方法" }],
+                "人际交往": [{ name: "好朋友突然不理我了" }, { name: "我不知道怎么和异性相处" }, { name: "他们在网上发帖骂我" }, { name: "我被孤立了" }],
+                "情绪调适": [{ name: "我经常emo" }, { name: "我生气时会摔东西" }, { name: "我用美工刀划自己" }, { name: "我控制不住自己的脾气" }],
+                "升学择业": [{ name: "我不知道以后要做什么" }, { name: "中考压力太大" }, { name: "我不知道选什么高中" }, { name: "我对未来很迷茫" }],
+                "挫折应对": [{ name: "考试失败后我很崩溃" }, { name: "我输了比赛很难受" }, { name: "被批评后我无法释怀" }, { name: "我害怕失败" }],
+                "青春期性健康": [{ name: "我好像喜欢上了一个人" }, { name: "暗恋让我很痛苦" }, { name: "我失恋了，很难受" }, { name: "我不知道怎么把握异性交往尺度" }, { name: "我担心怀孕怎么办" }]
             }
         },
         "高中": {
-            topics: ["学习适应性问题", "青春期性心理问题", "人际关系问题", "情绪调控问题"],
+            topics: ["自我意识", "学会学习", "人际交往", "情绪调适", "生涯规划", "社会责任感", "心理问题识别与求助"],
             cases: {
-                "学习适应性问题": [{ name: "高考压力太大", difficulty: "medium" }, { name: "我考不上好大学就完了", difficulty: "hard" }, { name: "我失眠很久了", difficulty: "hard" }, { name: "我注意力不集中", difficulty: "easy" }],
-                "青春期性心理问题": [{ name: "我对性感到好奇又害怕", difficulty: "easy" }, { name: "我有自慰行为很自责", difficulty: "medium" }, { name: "我怀孕了，怎么办", difficulty: "hard" }],
-                "人际关系问题": [{ name: "我觉得自己格格不入", difficulty: "easy" }, { name: "我被室友孤立了", difficulty: "hard" }, { name: "老师好像针对我", difficulty: "medium" }],
-                "情绪调控问题": [{ name: "我焦虑得喘不过气", difficulty: "medium" }, { name: "我觉得活着没意思", difficulty: "hard" }, { name: "我控制不住想哭", difficulty: "easy" }]
+                "自我意识": [{ name: "我不知道自己是谁" }, { name: "我想要什么样的生活" }, { name: "我和别人不一样" }, { name: "如何接纳真实的自己" }],
+                "学会学习": [{ name: "高考压力太大" }, { name: "我考不上好大学就完了" }, { name: "我失眠很久了" }, { name: "我注意力不集中" }, { name: "如何提高学习效率" }],
+                "人际交往": [{ name: "我觉得自己格格不入" }, { name: "我被室友孤立了" }, { name: "老师好像针对我" }, { name: "我喜欢的人不喜欢我" }, { name: "如何把握恋爱界限" }],
+                "情绪调适": [{ name: "我焦虑得喘不过气" }, { name: "我觉得活着没意思" }, { name: "我控制不住想哭" }, { name: "我害怕失败" }],
+                "生涯规划": [{ name: "我不知道选什么专业" }, { name: "我对未来很迷茫" }, { name: "如何规划我的职业生涯" }, { name: "升学还是就业" }],
+                "社会责任感": [{ name: "我能为社会做什么" }, { name: "我想参加志愿服务" }, { name: "如何平衡个人与集体" }],
+                "心理问题识别与求助": [{ name: "我可能有抑郁症" }, { name: "如何寻求专业帮助" }, { name: "我该告诉谁" }, { name: "心理疾病可怕吗" }]
             }
         }
     };
@@ -902,18 +866,17 @@
         for (const grade in allCasesData) {
             for (const topic in allCasesData[grade].cases) {
                 for (const c of allCasesData[grade].cases[topic]) {
-                    allCases.push({ grade, topic, name: c.name, difficulty: c.difficulty });
+                    allCases.push({ grade, topic, name: c.name });
                 }
             }
         }
         container.innerHTML = allCases.map(c => `
-            <div class="case-gallery-item" data-grade="${c.grade}" data-topic="${c.topic}" data-name="${c.name}" data-difficulty="${c.difficulty}">
+            <div class="case-gallery-item" data-grade="${c.grade}" data-topic="${c.topic}" data-name="${c.name}">
                 <div class="case-gallery-header">
                     <span class="case-gallery-grade">${c.grade}</span>
                     <span class="case-gallery-topic">${c.topic}</span>
                 </div>
                 <div class="case-gallery-name">${c.name}</div>
-                <div><span class="case-gallery-difficulty ${c.difficulty}">${c.difficulty === 'easy' ? '简单' : c.difficulty === 'medium' ? '中等' : '困难'}</span></div>
             </div>
         `).join('');
         document.querySelectorAll('.case-gallery-item').forEach(el => {
@@ -921,9 +884,8 @@
                 currentGrade = el.getAttribute('data-grade');
                 currentTopic = el.getAttribute('data-topic');
                 const caseName = el.getAttribute('data-name');
-                const difficulty = el.getAttribute('data-difficulty');
-                currentCase = { name: caseName, difficulty: difficulty };
-                startTraining(caseName, difficulty);
+                currentCase = { name: caseName };
+                startTraining(caseName);
             });
         });
     }
@@ -941,7 +903,7 @@
                     </div>
                     <div class="hot-cases">
                         ${top3.map(c => `
-                            <div class="hot-case-item" data-case-name="${c.name}" data-difficulty="${c.difficulty}">
+                            <div class="hot-case-item" data-case-name="${c.name}">
                                 <span class="hot-case-name">${c.name}</span>
                                 <span class="hot-case-count">🔥 ${c.count}次</span>
                             </div>
@@ -969,9 +931,8 @@
                     e.stopPropagation();
                     currentTopic = topic;
                     const caseName = item.getAttribute('data-case-name');
-                    const difficulty = item.getAttribute('data-difficulty');
-                    currentCase = { name: caseName, difficulty: difficulty };
-                    startTraining(caseName, difficulty);
+                    currentCase = { name: caseName };
+                    startTraining(caseName);
                 });
             });
         });
@@ -982,22 +943,20 @@
         const cases = allCasesData[currentGrade].cases[currentTopic] || [];
         document.getElementById('casesGradeTopic').innerText = `${currentGrade} · ${currentTopic}`;
         container.innerHTML = cases.map(c => `
-            <div class="case-item" data-case-name="${c.name}" data-difficulty="${c.difficulty}">
+            <div class="case-item" data-case-name="${c.name}">
                 <span class="case-name">${c.name}</span>
-                <span class="case-difficulty ${c.difficulty}">${c.difficulty === 'easy' ? '简单' : c.difficulty === 'medium' ? '中等' : '困难'}</span>
             </div>
         `).join('');
         document.querySelectorAll('.case-item').forEach(el => {
             el.addEventListener('click', () => {
                 const caseName = el.getAttribute('data-case-name');
-                const difficulty = el.getAttribute('data-difficulty');
-                currentCase = { name: caseName, difficulty: difficulty };
-                startTraining(caseName, difficulty);
+                currentCase = { name: caseName };
+                startTraining(caseName);
             });
         });
     }
 
-    function startTraining(caseName, difficulty) {
+    function startTraining(caseName) {
         document.getElementById('trainingHeaderInfo').innerText = `${currentGrade} · ${currentTopic} · ${caseName}`;
         currentMessages = []; studentMessageCount = parentMessageCount = teacherMessageCount = 0; currentRole = 'student';
         setActiveTab('student');
@@ -1013,11 +972,10 @@
         }
     }
 
-    function getAIReply(role, userMsg, difficulty) {
+    function getAIReply(role, userMsg) {
         const replies = { student: ['我有时候真的不知道怎么和爸妈说…', '老师，你觉得我该怎么办？', '其实我只是想被理解。'], parent: ['老师，我也很焦虑，我该怎么办？', '我承认我脾气急，但也是为他好。'], teacher: ['我会在课堂上多关注他。', '感谢反馈，我们一起制定计划。'] };
         let list = replies[role] || ['我明白了。'];
         if (userMsg.includes('谢谢')) return '不客气，我们一起帮助孩子成长。';
-        if (difficulty === 'hard' && role === 'student') return '老师，我真的好累…感觉没人懂我。';
         if (userMsg.includes('自杀') || userMsg.includes('不想活了')) return '⚠️ 请立即联系上级心理老师或拨打心理援助热线！';
         return list[Math.floor(Math.random() * list.length)];
     }
@@ -1051,7 +1009,7 @@
         if (!text) return;
         addMessage('user', text);
         input.value = '';
-        setTimeout(() => { addMessage('ai', getAIReply(currentRole, text, currentCase?.difficulty || 'easy')); }, 400);
+        setTimeout(() => { addMessage('ai', getAIReply(currentRole, text)); }, 400);
     }
     
     function showTip(content) { const panel = document.getElementById('tipPanel'); if(panel){ panel.classList.add('show'); panel.innerHTML = `💡 ${content}`; setTimeout(() => panel.classList.remove('show'), 4000); } }
@@ -1062,19 +1020,18 @@
         currentMessages = []; renderMessages();
     }
     
-    function getScoreLevel(count, difficulty) {
+    function getScoreLevel(count) {
         if (count === 0) return { level: '低', text: '未充分练习', score: 0 };
         let score = Math.min(85 + Math.floor(count / 2), 95);
-        if (difficulty === 'hard') score -= 5;
         if (score >= 80) return { level: '高', text: '表现优秀，对话流畅', score: 25 };
         if (score >= 65) return { level: '中', text: '基本掌握，有待提升', score: 18 };
         return { level: '低', text: '需要加强练习', score: 10 };
     }
     
     function endConsultation() {
-        const studentRes = getScoreLevel(studentMessageCount, currentCase?.difficulty || 'easy');
-        const parentRes = getScoreLevel(parentMessageCount, currentCase?.difficulty || 'easy');
-        const teacherRes = getScoreLevel(teacherMessageCount, currentCase?.difficulty || 'easy');
+        const studentRes = getScoreLevel(studentMessageCount);
+        const parentRes = getScoreLevel(parentMessageCount);
+        const teacherRes = getScoreLevel(teacherMessageCount);
         incrementTrainingCount(currentGrade);
         incrementCaseCount(currentGrade, currentTopic, currentCase.name);
         document.getElementById('studentLevel').innerHTML = `<span class="score-level ${studentRes.level === '高' ? 'high' : (studentRes.level === '中' ? 'medium' : 'low')}">${studentRes.level}</span>`;
@@ -1101,7 +1058,7 @@
             previousView = "home";
         }));
         
-        // 案例库入口（在首页添加案例库入口按钮）
+        // 案例库入口
         const headerRight = document.querySelector('.auth-area');
         const libraryBtn = document.createElement('button');
         libraryBtn.className = 'auth-btn';
@@ -1112,6 +1069,7 @@
             renderCasesGallery();
             document.getElementById('homeView').classList.add('hidden');
             document.getElementById('libraryView').classList.remove('hidden');
+            previousView = "library";
         });
         headerRight.insertBefore(libraryBtn, headerRight.firstChild);
         
@@ -1139,7 +1097,7 @@
         document.getElementById('exportTranscriptBtn').addEventListener('click', () => alert('逐字稿导出功能开发中'));
         setActiveTab('student');
         
-        // 案例列表页容器（用于议题内全部案例）
+        // 案例列表页容器
         const casesViewDiv = document.createElement('div');
         casesViewDiv.id = 'casesView';
         casesViewDiv.className = 'hidden';
